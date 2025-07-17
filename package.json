@@ -6,15 +6,10 @@
   "unity": "2022.3",
   "dependencies": {
     "com.unity.inputsystem": "1.7.0",
-    "com.svermeulen.extenject": "https://github.com/svermeulen/Extenject.git#9.3.0"
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git#2.4.0",
+    "com.cysharp.r3": "https://github.com/Cysharp/R3.git#1.0.0",
+    "com.kyrylo.primetween": "https://github.com/KyryloKuzyk/PrimeTween.git#1.2.3"
   },
-  "samples": [
-    {
-      "displayName": "Example Scenes",
-      "description": "Example scenes for rapid prototyping",
-      "path": "Samples~/Scenes"
-    }
-  ],
   "author": {
     "name": "Şaban Mete Türkay Demirkıran",
     "email": "sabanmeteturkay@gmail.com",
