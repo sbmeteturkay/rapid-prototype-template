@@ -4,12 +4,6 @@
   "displayName": "Rapid Prototype Core",
   "description": "Core systems and example scenes for Unity rapid prototyping.",
   "unity": "2022.3",
-  "dependencies": {
-    "com.unity.inputsystem": "1.7.0",
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git#2.4.0",
-    "com.cysharp.r3": "https://github.com/Cysharp/R3.git#1.0.0",
-    "com.kyrylo.primetween": "https://github.com/KyryloKuzyk/PrimeTween.git#1.2.3"
-  },
   "author": {
     "name": "Şaban Mete Türkay Demirkıran",
     "email": "sabanmeteturkay@gmail.com",
