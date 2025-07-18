@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8367918520654376030}
   - component: {fileID: 573828104692490764}
   - component: {fileID: 291319866663125987}
-  - component: {fileID: 2490717262773030139}
+  - component: {fileID: 85648034443576683}
   m_Layer: 5
   m_Name: Loading Panel
   m_TagString: Untagged
@@ -91,7 +91,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &2490717262773030139
+--- !u!114 &85648034443576683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 321145774951341651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5c69053427f402daa25fd2c418e552e, type: 3}
+  m_Script: {fileID: 11500000, guid: a114b78b2b4e73e41821e84af4e85e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rootCanvas: {fileID: 291319866663125987}
