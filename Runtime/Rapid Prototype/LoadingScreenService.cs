@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using PrimeTween;
 using SabanMete.Core.Utils;
 using TMPro;
 using UnityEngine;
@@ -10,8 +11,8 @@ namespace SabanMete.Core.UI
 {
     public interface ILoadingScreenService
     {
-        UniTask ShowAsync(string message = "");
-        UniTask HideAsync();
+        void Show(string message = "",float duration=1);
+        void Hide();
     }
     public struct LoadingProgressSignal
     {
@@ -43,33 +44,61 @@ namespace SabanMete.Core.UI
             progressBar.value = signal.Progress;
         }
 
-        private async void OnShowLoadingRequested()
+        private void OnShowLoadingRequested()
         {
-            await ShowAsync();
+             Show("Loading...",0f);
         }
 
-        private async void OnHideLoadingRequested()
+        private  void OnHideLoadingRequested()
         {
-            await HideAsync();
+             Hide();
         }
 
         private void OnGameSceneReady()
         {
             signalBus.Fire<HideLoadingScreenSignal>();
         }
-        public async UniTask ShowAsync(string message = "Loading...")
+        public void Show(string message = "Loading...",float duration = 1.0f)
         {
-            if (rootCanvas == null) return;
             messageText.text = message;
-            rootCanvas.alpha = 1;
-            await UniTask.Yield(); // frame atla
+            if (duration > 0)
+            {
+                Tween.Custom(
+                    0f,
+                    1f,
+                    duration: duration,
+                    value => {
+                        rootCanvas.alpha = value;
+                    },Ease.InOutSine
+                ).OnComplete(() => {
+                    rootCanvas.alpha = 1;
+                    rootCanvas.interactable = true;
+                    rootCanvas.blocksRaycasts = true;
+                }); 
+            }
+            else
+            {
+                rootCanvas.alpha = 1;
+                rootCanvas.interactable = true;
+                rootCanvas.blocksRaycasts = true;
+            }
         }
 
-        public async UniTask HideAsync()
+        public void  Hide()
         {
             if (rootCanvas == null) return;
-            rootCanvas.alpha = 0;
-            await UniTask.Yield();
+            Tween.Custom(
+                1f,
+                0f,
+                duration: .5f,
+                value => {
+                    rootCanvas.alpha = value;
+                },Ease.InOutSine
+            ).OnComplete(() => {
+                rootCanvas.alpha = 0;
+                rootCanvas.interactable = false;
+                rootCanvas.blocksRaycasts = false;
+            });
         }
         private void OnDestroy()
         {

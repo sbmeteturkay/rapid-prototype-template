@@ -25,9 +25,9 @@ namespace SabanMete.Core.UI
             signalBus.Unsubscribe<GameSceneReadySignal>(OnGameSceneReady);
         }
 
-        private async void OnGameSceneReady()
+        private void OnGameSceneReady()
         {
-            await loadingScreenService.HideAsync();
+             loadingScreenService.Hide();
         }
     }
 }

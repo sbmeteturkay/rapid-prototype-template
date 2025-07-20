@@ -19,7 +19,7 @@ namespace SabanMete.Core.GameStates
         }
         public void Initialize()
         {
-            sceneLoader.LoadScenesAsync(new[] { "MainScene", "UIScene"});
+            sceneLoader.LoadScenesAsync(new[] { "MainScene", "UIScene","GameScene"});
             Current = GameState.MainMenu;
         }
         public void SetState(GameState newState)
