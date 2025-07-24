@@ -20,7 +20,7 @@ namespace SabanMete.Core.UI
             Tween.Custom(
                 0f,
                 100f,
-                duration: 5f,
+                duration: 1f,
                 value => {
                     signalBus.Fire(new LoadingProgressSignal(value));
                 },Ease.InOutSine
