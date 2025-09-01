@@ -1,5 +1,4 @@
 using SabanMete.Core.GameStates;
-using SabanMete.Core.UI;
 using SabanMete.Core.Utils;
 using UnityEngine;
 using Zenject;
